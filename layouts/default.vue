@@ -1,10 +1,17 @@
 <template>
   <div>
+    <nav>
+      <NuxtLink to="/">Home</NuxtLink>
+      <NuxtLink to="/about">About</NuxtLink>
+    </nav>
     <Nuxt />
   </div>
 </template>
 
 <style>
+nav {
+  text-align: center;
+}
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;

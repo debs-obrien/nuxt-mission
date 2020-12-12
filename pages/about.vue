@@ -3,7 +3,6 @@
     <div>
       <Logo />
       <h1 class="title">About</h1>
-      <NuxtLink to="/">Home</NuxtLink>
     </div>
   </div>
 </template>
