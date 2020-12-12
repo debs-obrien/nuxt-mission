@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <img :src="planet.image" :alt="planet.title" />
+      <img :src="planet.image" alt="" />
       <h1 class="title">{{ planet.title }}</h1>
     </div>
   </div>
@@ -9,9 +9,9 @@
 
 <script>
 export default {
-  async asyncData({ params }) {
+  async asyncData() {
     const planet = await fetch(
-      `https://api.nuxtjs.dev/planets/${params.slug}`
+      'https://api.nuxtjs.dev/planets/mars'
     ).then((res) => res.json())
     return { planet }
   },
