@@ -9,9 +9,9 @@
 
 <script>
 export default {
-  async asyncData() {
+  async asyncData({ params }) {
     const planet = await fetch(
-      'https://api.nuxtjs.dev/planets/mars'
+      `https://api.nuxtjs.dev/planets/${params.slug}`
     ).then((res) => res.json())
     return { planet }
   },
