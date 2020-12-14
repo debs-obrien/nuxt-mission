@@ -8,7 +8,7 @@
 
       <ul v-else>
         <li>
-          <NuxtLink to="/nuxt"> Nuxt planet </NuxtLink>
+          <NuxtLink to="/nuxt"> Nuxt </NuxtLink>
         </li>
         <li v-for="planet in planets" :key="planet.slug">
           <NuxtLink :to="planet.slug">
@@ -22,6 +22,7 @@
 
 <script>
 export default {
+  layout: 'home',
   async fetch() {
     this.planets = await fetch('https://api.nuxtjs.dev/planets').then((res) =>
       res.json()
