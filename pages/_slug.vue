@@ -3,12 +3,32 @@
     <div>
       <img :src="planet.image" alt="" />
       <h1 class="title">{{ planet.title }}</h1>
+      <PlanetsList />
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  head() {
+    return {
+      title: this.planet.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.planet.description,
+        },
+      ],
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `https://jamstack-explorers-nuxt-mission`,
+        },
+      ],
+    }
+  },
   async asyncData({ params }) {
     const planet = await fetch(
       `https://api.nuxtjs.dev/planets/${params.slug}`
@@ -22,7 +42,11 @@ export default {
   },
 }
 </script>
-
+<style scoped>
+h1 {
+  font-family: Nunito, sans-serif;
+}
+</style>
 <style>
 img {
   height: 80px;
